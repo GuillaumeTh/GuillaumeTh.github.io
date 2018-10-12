@@ -4,154 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("smooth").fadeIn(3000);
+}); 
+</script>
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
-<body class="w3-light-grey">
+<body class="w3-black">
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="data/profile.jpg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button  w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button  w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#publications" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-file-text w3-xxlarge"></i>
+    <p>PUBLICATIONS</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="data/profile.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-white">
-            <h2>Guillaume Theaud</h2>
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Master's student at University of Sherbrooke</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Sherbrooke, QC, Canada</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>guillaume.theaud@usherbrooke.ca</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Downloads</b></p>
-          <h5 >Curriculum Vitae 
-              <a href="data/CV.pdf" target="_blank"><i class="fa fa-download fa-fw w3-margin-right w3-text-teal"></i></a>
-          </h5>
-          <br>
-        </div>
-      </div><br>
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-        
-     <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Presentation</h2>
-        <div class="w3-container">
-          <p>I'm from France and I live in Canada since 2014. I have gotten my High school diploma in sciences in 2014. Then, I continued to study at University of Sherbrooke in the computer science department. I studied the image analysis and processing in computer science and I got my bachelor degree end 2017. Currently, I study at the Sherbrooke Connectivity Imaging Lab (SCIL) under the supervision of Pr. Descoteaux to obtain my master degree in sciences (MSc).</p><br>
-        </div>
-      </div>
-    <br>
-    <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Ongoing projects</h2>
-        <div class="w3-container">
-            <h5 class="w3-opacity"><b>Surgical planning</b></h5>
-            <p>Create a automatic pipeline to analyse a diffusion magnetic resonant image of brain with tumor. The analysis consist to generate a whole brain tractogram with a tumor segmentation prior and extract the white matter bundles near of the tumor.</p><hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>State-of-the-art pipeline and QA</b></h5>
-          <p>Create a Nextflow pipeline with the state-of-the-art processes to analyse human brain database. The goal is to improve the speed and the reproductibility. This project is based on Nextflow and Singularity container.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Improve tractography</b></h5>
-          <p>Improve the tractography with multi-shell multi-tissue fODF in the macaque visual cortex. The ground truth used is based on tract tracing and histology.</p>
-          <hr>
-        </div>
-      </div>
-    <br>
-    <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Université de Sherbrooke, Québec, Canada</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Master Degree in sciences (MSc)</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Université de Sherbrooke, Québec, Canada</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2014 - 2017</h6>
-          <p>Bachelor Degree in computer science and image processing</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Lycée Polyvalent St Paul, France</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2011 - 2014</h6>
-          <p>High school diploma in sciences</p><br>
-        </div>
-      </div> 
-    <br>
-    <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Publications</h2>
-        <h3 class="w3-opacity"><b>Journals</b></h3>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Limits to anatomical accuracy of diffusion tractography using modern approaches, Schilling et al., Neuroimage 2018</b></h5>
-            <h6 class="w3-text-teal"><i class="fa fa-download fa-fw w3-margin-right"></i><a href="https://www.sciencedirect.com/science/article/pii/S1053811918319888" target="_blank">URL</a></h6>
-          <hr>
-        </div>
-        <h3 class="w3-opacity"><b>Abstracts</b></h3>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Multi-shell multi-tissue fODF tractography improves V1-V2 macaque connectivity mapping, Theaud et al., ISMRM 2018</b></h5>
-            <h6 class="w3-text-teal"><i class="fa fa-download fa-fw w3-margin-right"></i><a href="data/Theaud-etal_ISMRM18.pdf" target="_blank">URL</a></h6>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Impact of white-matter hyperintensities on tractography, Theaud et al., ISMRM 2017</b></h5>
-            <h6 class="w3-text-teal"><i class="fa fa-download fa-fw w3-margin-right"></i><a href="data/Theaud-etal-ismrm17.pdf" target="_blank">URL</a></h6>
-          <hr>
-        </div>
-      </div>
-        <br>
-     <div class="w3-container w3-card w3-white w3-row">
-         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-photo fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Gallery</h2>
-    <div class="w3-third w3-padding-16">
-      <img src="gallery/Preuve_par_image_no_crop.png" style="width:100%" onclick="onClick(this)" alt="Macaque V1-V2 connections in visual cortex">
-    </div>
-        </div>
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#publications" class="w3-bar-item w3-button" style="width:25% !important">PUBLICATIONS</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
   </div>
-  
-  <!-- End Page Container -->
 </div>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Guillaume Theaud</p>
-</footer>
-    
-<!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
-    
-<script>
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo">Guillaume Theaud</h1>
+    <p>MD student</p>
+    <img src="data/home.jpg" alt="boy" class="w3-image" width="992" height="1108">
+  </header>
 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-</script>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">Guillaume Theaud</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>I'm from France and I live in Canada since 2014. I have gotten my High school diploma in sciences in 2014. Then, I continued to study at University of Sherbrooke in the computer science department. I studied the image analysis and processing in computer science and I got my bachelor degree end 2017. Currently, I study at the Sherbrooke Connectivity Imaging Lab (SCIL) under the supervision of Pr. Descoteaux to obtain my master degree in sciences (MSc).
+    </p>
+    
+    <form action="data/CV.pdf" target="_blank">
+    <button class="w3-button w3-light-grey w3-padding-large w3-section" type="submit">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+    </form>
+    
+    
+    <!-- Grid for pricing tables -->
+    <h3 class="w3-padding-16 w3-text-light-grey">Ongoing projects</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-white w3-center w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Surgical planning</li>
+          <li class="w3-padding-16">Create a automatic pipeline to analyse a diffusion magnetic resonant image of brain with tumor. The analysis consist to generate a whole brain tractogram with a tumor segmentation prior and extract the white matter bundles near of the tumor.</li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-white w3-center w3-hover-opacity-off">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">State-of-the-art pipeline and QA</li>
+          <li class="w3-padding-16">Create a Nextflow pipeline with the state-of-the-art processes to analyse human brain database. The goal is to improve the speed and the reproductibility. This project is based on Nextflow and Singularity container.</li>
+        </ul>
+      </div>
+    <!-- End Grid/Pricing tables -->
+    </div>
+    <!-- End About Section -->
+    </div>
+
+    <!-- Publications Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="publications">
+    <h3 class="w3-text-light-grey">My Publications</h3>
+    <hr style="width:200px" class="w3-opacity">
+    <h5 class="w3-text-light-grey">Journals</h5>
+    <ul class="w3-ul w3-white w3-opacity w3-hover-opacity-off">
+      <li class="w3-dark-grey w3-large">Limits to anatomical accuracy of diffusion tractography using modern approaches</li>
+      <li>Schilling etal., Neuroimage 2018 <a href="https://www.sciencedirect.com/science/article/pii/S1053811918319888" target="_blank"><i class="fa fa-download fa-fw w3-margin-right"></i></a></li>
+    </ul>
+    <h5 class="w3-text-light-grey">Abstracts</h5>
+    <ul class="w3-ul w3-white w3-opacity w3-hover-opacity-off">
+      <li class="w3-dark-grey w3-large">Multi-shell multi-tissue fODF tractography improves V1-V2 macaque connectivity mapping</li>
+      <li>Theaud etal., ISMRM 2018 <a href="data/Theaud-etal_ISMRM18.pdf" target="_blank"><i class="fa fa-download fa-fw w3-margin-right"></i></a></li>
+    </ul>
+    <div class="w3-padding-16">
+    <ul class="w3-ul w3-white w3-opacity w3-hover-opacity-off">
+      <li class="w3-dark-grey w3-large">Impact of white-matter hyperintensities on tractography</li>
+      <li>Theaud etal., ISMRM 2017 <a href="data/Theaud-etal-ismrm17.pdf" target="_blank"><i class="fa fa-download fa-fw w3-margin-right"></i></a></li>
+    </ul>
+    </div>
+    <!-- End Publications Section --> 
+    </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="gallery/Preuve_par_image_no_crop.png" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="gallery/render.jpg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Université de Sherbrooke, Québec, Canada</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: guillaume.theaud@usherbrooke.ca</p>
+    </div><br>
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <p class="w3-medium">Guillaume Theaud</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
 
 </body>
 </html>
